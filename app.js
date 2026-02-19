@@ -126,26 +126,25 @@ function buildDemoComplaints(problemTitle, sector, seed) {
 
 function buildDemoTeams(problemId, problemTitle, seed) {
   const now = Date.now();
-  return [0, 1].map((offset) => {
-    const blueprint = DEMO_TEAM_BLUEPRINTS[(seed + offset) % DEMO_TEAM_BLUEPRINTS.length];
-    const teamNum = offset + 1;
-    return {
-      id: `${problemId}-demo-team-${teamNum}`,
-      solutionTitle: blueprint.title,
-      summary: blueprint.summary,
-      roles: blueprint.roles,
-      ownerName: `Demo Founder ${teamNum}`,
-      ownerEmail: `founder${teamNum}@pinit.demo`,
-      members: [
-        {
-          name: `Demo Founder ${teamNum}`,
-          email: `founder${teamNum}@pinit.demo`,
-          joinedAt: now - (offset * 2000),
-        },
-      ],
-      createdAt: now - (offset * 5000),
-    };
-  });
+  const offset = 0;
+  const blueprint = DEMO_TEAM_BLUEPRINTS[(seed + offset) % DEMO_TEAM_BLUEPRINTS.length];
+  const teamNum = 1;
+  return [{
+    id: `${problemId}-demo-team-${teamNum}`,
+    solutionTitle: blueprint.title,
+    summary: blueprint.summary,
+    roles: blueprint.roles,
+    ownerName: `Demo Founder ${teamNum}`,
+    ownerEmail: `founder${teamNum}@pinit.demo`,
+    members: [
+      {
+        name: `Demo Founder ${teamNum}`,
+        email: `founder${teamNum}@pinit.demo`,
+        joinedAt: now - (offset * 2000),
+      },
+    ],
+    createdAt: now - (offset * 5000),
+  }];
 }
 
 function enrichProblemForDemo(problem, seed) {
@@ -165,7 +164,7 @@ function enrichProblemForDemo(problem, seed) {
     sourceSubreddits: Array.isArray(problem.sourceSubreddits) ? problem.sourceSubreddits : [],
     complaints: complaintPayload,
     complaintCount,
-    teams: Math.max(2, Number(problem.teams || 0)),
+    teams: Math.max(1, Number(problem.teams || 0)),
     demoTeams: [...existingDemoTeams, ...demoTeams],
   };
 }
@@ -187,7 +186,7 @@ function createDemoProblems(existingProblems, minimumCards) {
       sector,
       summary: `Demo issue card for MVP presentation in ${sector}.`,
       interested: 40 + ((index * 13) % 170),
-      teams: 2,
+      teams: 1,
       demand: index % 3 === 0 ? "high" : (index % 3 === 1 ? "medium" : "low"),
       fresh: index % 2 === 0,
       investor: index % 4 === 0,
@@ -794,18 +793,31 @@ function initFeedPage() {
 }
 
 function renderSolutionsPage() {
-  const directoryEl = document.getElementById("problemDirectory");
-  const panelEl = document.getElementById("solutionsPanel");
-  const solutionsGridEl = document.getElementById("solutionsGrid");
+  const marketplaceGridEl = document.getElementById("teamMarketplaceGrid");
   const formEl = document.getElementById("solutionForm");
-  if (!directoryEl || !panelEl || !solutionsGridEl) return;
+  const problemSelectEl = document.getElementById("solutionProblemSelect");
+  const roleFilterEl = document.getElementById("marketRoleFilter");
+  const sectorFilterEl = document.getElementById("marketSectorFilter");
+  const problemFilterEl = document.getElementById("marketProblemFilter");
+  const openOnlyBtn = document.getElementById("marketOpenOnly");
+  const newOnlyBtn = document.getElementById("marketNewOnly");
+  const countsEl = document.getElementById("teamMarketCounts");
+  if (!marketplaceGridEl || !formEl || !problemSelectEl || !roleFilterEl || !sectorFilterEl || !problemFilterEl) return;
 
   const searchInput = document.getElementById("searchInput");
   const contextEl = document.getElementById("solutionsContext");
   const params = new URLSearchParams(window.location.search);
   const selectedProblemId = params.get("problem");
   const selectedProblem = selectedProblemId ? getProblemById(selectedProblemId) : null;
-  let searchTerm = "";
+
+  const state = {
+    searchTerm: "",
+    role: "all",
+    sector: "all",
+    problem: selectedProblem ? selectedProblem.id : "all",
+    openOnly: false,
+    newOnly: false,
+  };
 
   function buildMailto(ownerEmail, solutionTitle) {
     const email = sanitizeEmail(ownerEmail);
@@ -814,39 +826,80 @@ function renderSolutionsPage() {
     return `mailto:${encodeURIComponent(email)}?subject=${subject}`;
   }
 
-  function renderDirectory() {
-    const query = searchTerm.trim().toLowerCase();
-    const teamMap = loadUserTeamMap();
-    const filtered = problems.filter((problem) => {
-      if (!query) return true;
-      return `${problem.title} ${problem.sector}`.toLowerCase().includes(query);
+  function getLastActivity(team) {
+    const members = Array.isArray(team.members) ? team.members : [];
+    const memberTs = members.reduce((latest, member) => Math.max(latest, Number(member.joinedAt || 0)), 0);
+    return Math.max(Number(team.createdAt || 0), memberTs);
+  }
+
+  function getOpenRoleCount(team) {
+    const needed = Array.isArray(team.roles) ? team.roles.length : 0;
+    const members = Array.isArray(team.members) ? team.members.length : 0;
+    return Math.max(0, needed - members);
+  }
+
+  function getMarketplaceRows() {
+    return problems.flatMap((problem) => {
+      const teams = getTeamsForProblem(problem.id);
+      return teams.map((team) => ({
+        problem,
+        team,
+        openRoles: getOpenRoleCount(team),
+        lastActivity: getLastActivity(team),
+      }));
+    });
+  }
+
+  function setSelectOptions(selectEl, values, prefixLabel) {
+    const currentValue = String(selectEl.value || "all");
+    selectEl.innerHTML = "";
+
+    const allOpt = document.createElement("option");
+    allOpt.value = "all";
+    allOpt.textContent = `All ${prefixLabel}`;
+    selectEl.appendChild(allOpt);
+
+    values.forEach((value) => {
+      const opt = document.createElement("option");
+      opt.value = value;
+      opt.textContent = value;
+      selectEl.appendChild(opt);
     });
 
-    directoryEl.innerHTML = "";
-    panelEl.classList.add("hidden");
+    selectEl.value = values.includes(currentValue) ? currentValue : "all";
+  }
 
-    if (contextEl) {
-      contextEl.textContent = "Select a problem to view teams, join one, or start your own.";
-    }
+  function syncProblemOptions() {
+    const sortedProblems = [...problems].sort((a, b) => String(a.title).localeCompare(String(b.title)));
 
-    if (filtered.length === 0) {
-      directoryEl.innerHTML = `<div class="empty-state">No problems found. Run the scraper to populate real data.</div>`;
-      return;
-    }
-
-    filtered.forEach((problem) => {
-      const complaintCount = Number(problem.complaintCount || 0);
-      const teamCount = getTeamCountForProblem(problem, teamMap);
-      const article = document.createElement("article");
-      article.className = "problem-directory-card";
-      article.innerHTML = `
-        <h3>${escapeHtml(problem.title)}</h3>
-        <p>${escapeHtml(problem.sector)}${complaintCount ? ` • ${complaintCount} complaints` : ""}</p>
-        <p>${teamCount} teams forming</p>
-        <a class="ghost-btn" href="solutions.html?problem=${encodeURIComponent(problem.id)}">View Solutions</a>
-      `;
-      directoryEl.appendChild(article);
+    problemSelectEl.innerHTML = "";
+    sortedProblems.forEach((problem) => {
+      const opt = document.createElement("option");
+      opt.value = problem.id;
+      opt.textContent = `${problem.title} (${problem.sector})`;
+      problemSelectEl.appendChild(opt);
     });
+
+    const currentFormValue = sortedProblems.some((p) => p.id === problemSelectEl.value)
+      ? problemSelectEl.value
+      : (state.problem !== "all" ? state.problem : sortedProblems[0]?.id);
+    if (currentFormValue) problemSelectEl.value = currentFormValue;
+
+    problemFilterEl.innerHTML = "";
+    const allOpt = document.createElement("option");
+    allOpt.value = "all";
+    allOpt.textContent = "All Problems";
+    problemFilterEl.appendChild(allOpt);
+    sortedProblems.forEach((problem) => {
+      const opt = document.createElement("option");
+      opt.value = problem.id;
+      opt.textContent = problem.title;
+      problemFilterEl.appendChild(opt);
+    });
+    problemFilterEl.value = state.problem !== "all" && sortedProblems.some((p) => p.id === state.problem)
+      ? state.problem
+      : "all";
+    state.problem = problemFilterEl.value;
   }
 
   function addMemberToTeam(problemId, teamId, name, email) {
@@ -883,6 +936,7 @@ function renderSolutionsPage() {
     else userTeams[userIndex] = updatedTeam;
     saveTeamsForProblem(problemId, userTeams, map);
     saveCurrentUser(safeName, safeEmail);
+    setInterested(problemId, true);
     return true;
   }
 
@@ -923,56 +977,80 @@ function renderSolutionsPage() {
     alert("Message sent to the team inbox.");
   }
 
-  function renderSolutionsForProblem(problem) {
-    const allTeams = getTeamsForProblem(problem.id);
-    const filteredTeams = allTeams.filter((team) => {
-      if (!searchTerm) return true;
-      const memberNames = team.members.map((member) => member.name).join(" ");
-      const haystack = `${team.solutionTitle} ${team.summary} ${team.ownerName} ${(team.roles || []).join(" ")} ${memberNames}`.toLowerCase();
-      return haystack.includes(searchTerm);
-    });
+  function renderMarketplace() {
+    const allRows = getMarketplaceRows();
+    const roleValues = Array.from(new Set(allRows.flatMap((row) => Array.isArray(row.team.roles) ? row.team.roles : []))).sort();
+    const sectorValues = Array.from(new Set(allRows.map((row) => String(row.problem.sector || "")).filter(Boolean))).sort();
+    setSelectOptions(roleFilterEl, roleValues, "Roles");
+    setSelectOptions(sectorFilterEl, sectorValues, "Sectors");
+    roleFilterEl.value = state.role;
+    sectorFilterEl.value = state.sector;
+    problemFilterEl.value = state.problem;
 
-    directoryEl.innerHTML = "";
-    panelEl.classList.remove("hidden");
-    solutionsGridEl.innerHTML = "";
+    const now = Date.now();
+    const filtered = allRows.filter((row) => {
+      if (state.problem !== "all" && row.problem.id !== state.problem) return false;
+      if (state.role !== "all" && !(Array.isArray(row.team.roles) && row.team.roles.includes(state.role))) return false;
+      if (state.sector !== "all" && row.problem.sector !== state.sector) return false;
+      if (state.openOnly && row.openRoles <= 0) return false;
+      if (state.newOnly && now - row.lastActivity > 7 * 24 * 60 * 60 * 1000) return false;
+      if (!state.searchTerm) return true;
+      const members = Array.isArray(row.team.members) ? row.team.members.map((m) => m.name).join(" ") : "";
+      const haystack = `${row.team.solutionTitle} ${row.team.summary} ${row.team.ownerName} ${row.problem.title} ${row.problem.sector} ${(row.team.roles || []).join(" ")} ${members}`.toLowerCase();
+      return haystack.includes(state.searchTerm);
+    }).sort((a, b) => b.lastActivity - a.lastActivity);
 
     if (contextEl) {
-      contextEl.textContent = `Showing solution teams for: ${problem.title}`;
+      if (state.problem !== "all") {
+        const scoped = getProblemById(state.problem);
+        contextEl.textContent = scoped
+          ? `Team marketplace scoped to: ${scoped.title}`
+          : "Team marketplace for all problems.";
+      } else {
+        contextEl.textContent = "Browse all solution teams, join builders, and start your own team.";
+      }
     }
 
-    if (filteredTeams.length === 0) {
-      solutionsGridEl.innerHTML = `<div class="empty-state">No teams yet for this problem. Submit a solution to start the first team.</div>`;
+    if (countsEl) {
+      const openRoles = filtered.reduce((sum, row) => sum + row.openRoles, 0);
+      countsEl.textContent = `${filtered.length} teams shown • ${openRoles} open roles`;
+    }
+
+    marketplaceGridEl.innerHTML = "";
+    if (filtered.length === 0) {
+      marketplaceGridEl.innerHTML = `<div class="empty-state">No teams match these filters yet. Start a new solution team.</div>`;
       return;
     }
 
-    filteredTeams.forEach((team) => {
+    filtered.forEach((row) => {
+      const { problem, team, openRoles, lastActivity } = row;
       const roles = Array.isArray(team.roles) ? team.roles : [];
-      const created = formatDateFromMs(team.createdAt);
       const roleChips = roles.map((role) => `<span class="role-chip">${escapeHtml(role)}</span>`).join("");
-      const memberChips = team.members
-        .slice(0, 8)
-        .map((member) => `<span class="team-tag">${escapeHtml(member.name)}</span>`)
-        .join("");
+      const memberChips = Array.isArray(team.members)
+        ? team.members.slice(0, 8).map((member) => `<span class="team-tag">${escapeHtml(member.name)}</span>`).join("")
+        : "";
       const mailto = buildMailto(team.ownerEmail, team.solutionTitle);
 
       const article = document.createElement("article");
-      article.className = "solution-card";
+      article.className = "solution-card market-card";
       article.innerHTML = `
         <div class="solution-head">
           <h3>${escapeHtml(team.solutionTitle)}</h3>
-          <span class="team-tag">${team.ownedByCurrentUser ? "Your Team" : "Team"}</span>
+          <span class="team-tag">${team.ownedByCurrentUser ? "Your Team" : (team.joinedByCurrentUser ? "Joined" : "Open Team")}</span>
         </div>
-        <p class="solution-byline">Owner: ${escapeHtml(team.ownerName)}${created ? ` • ${escapeHtml(created)}` : ""}</p>
+        <p class="solution-byline">Problem: ${escapeHtml(problem.title)}</p>
         <p>${escapeHtml(team.summary)}</p>
         <div class="roles-row">${roleChips || '<span class="role-chip">Generalist</span>'}</div>
         <div class="team-tag-row">${memberChips || '<span class="team-tag">No members yet</span>'}</div>
         <div class="solution-foot">
-          <span>${team.members.length} members</span>
-          <span>${escapeHtml(problem.sector)}</span>
+          <span>${Array.isArray(team.members) ? team.members.length : 0} members</span>
+          <span>${openRoles} open roles</span>
+          <span>Updated ${escapeHtml(formatDateFromMs(lastActivity))}</span>
         </div>
         <div class="solution-actions">
-          <button type="button" class="ghost-btn join-team-btn" data-team-id="${escapeHtml(team.id)}">Join Team</button>
-          <button type="button" class="ghost-btn ask-team-btn" data-team-id="${escapeHtml(team.id)}">Ask Question</button>
+          <button type="button" class="ghost-btn join-team-btn">Join Team</button>
+          <button type="button" class="ghost-btn ask-team-btn">Ask Team</button>
+          <a class="ghost-btn" href="problem.html?id=${encodeURIComponent(problem.id)}">View Problem</a>
           ${mailto ? `<a class="ghost-btn" href="${mailto}">Email Owner</a>` : '<span class="team-tag">Email not shared</span>'}
         </div>
       `;
@@ -988,20 +1066,18 @@ function renderSolutionsPage() {
             alert("Name is required to join a team.");
             return;
           }
-
           const joinEmailInput = window.prompt("Enter your email (optional):", profile.email || "") || "";
           const trimmedEmail = joinEmailInput.trim();
           if (trimmedEmail && !sanitizeEmail(trimmedEmail)) {
             alert("Email format looks invalid. Please try again.");
             return;
           }
-
           const added = addMemberToTeam(problem.id, team.id, trimmedName, trimmedEmail);
           if (!added) {
             alert("You are already on this team or the team is no longer available.");
             return;
           }
-          renderSolutionsForProblem(problem);
+          renderMarketplace();
         });
       }
 
@@ -1012,85 +1088,113 @@ function renderSolutionsPage() {
         });
       }
 
-      solutionsGridEl.appendChild(article);
+      marketplaceGridEl.appendChild(article);
     });
   }
 
-  function wireForm(problem) {
-    if (!formEl || !problem) return;
+  formEl.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const proposerInput = document.getElementById("proposerName");
+    const ownerEmailInput = document.getElementById("ownerEmail");
+    const titleInput = document.getElementById("solutionTitle");
+    const summaryInput = document.getElementById("solutionSummary");
+    const rolesInput = document.getElementById("neededRoles");
+    if (!proposerInput || !ownerEmailInput || !titleInput || !summaryInput || !rolesInput) return;
 
-    formEl.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const proposerInput = document.getElementById("proposerName");
-      const ownerEmailInput = document.getElementById("ownerEmail");
-      const titleInput = document.getElementById("solutionTitle");
-      const summaryInput = document.getElementById("solutionSummary");
-      const rolesInput = document.getElementById("neededRoles");
-      if (!proposerInput || !ownerEmailInput || !titleInput || !summaryInput || !rolesInput) return;
+    const selectedProblem = getProblemById(problemSelectEl.value);
+    if (!selectedProblem) {
+      alert("Select a valid problem first.");
+      return;
+    }
 
-      const proposer = proposerInput.value.trim();
-      const ownerEmail = ownerEmailInput.value.trim();
-      const title = titleInput.value.trim();
-      const summary = summaryInput.value.trim();
-      const roles = rolesInput.value
-        .split(",")
-        .map((item) => item.trim())
-        .filter(Boolean)
-        .slice(0, 8);
+    const proposer = proposerInput.value.trim();
+    const ownerEmail = ownerEmailInput.value.trim();
+    const title = titleInput.value.trim();
+    const summary = summaryInput.value.trim();
+    const roles = rolesInput.value
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean)
+      .slice(0, 8);
 
-      if (!proposer || !title || !summary || roles.length === 0) return;
-      if (ownerEmail && !sanitizeEmail(ownerEmail)) {
-        alert("Owner email format looks invalid.");
-        return;
-      }
+    if (!proposer || !title || !summary || roles.length === 0) return;
+    if (ownerEmail && !sanitizeEmail(ownerEmail)) {
+      alert("Owner email format looks invalid.");
+      return;
+    }
 
-      const map = loadUserTeamMap();
-      const teams = getUserTeamsForProblem(problem.id, map);
-      teams.unshift({
-        id: `${problem.id}-team-${Date.now()}`,
-        problemId: problem.id,
-        solutionTitle: title,
-        summary,
-        roles,
-        ownerName: proposer,
-        ownerEmail: ownerEmail || "",
-        members: [
-          {
-            name: proposer,
-            email: ownerEmail || "",
-            joinedAt: Date.now(),
-            joinedByCurrentUser: true,
-          },
-        ],
-        createdAt: Date.now(),
-        ownedByCurrentUser: true,
-        joinedByCurrentUser: true,
-      });
-      saveTeamsForProblem(problem.id, teams, map);
-      saveCurrentUser(proposer, ownerEmail || "");
-      formEl.reset();
-      renderSolutionsForProblem(problem);
+    const map = loadUserTeamMap();
+    const teams = getUserTeamsForProblem(selectedProblem.id, map);
+    teams.unshift({
+      id: `${selectedProblem.id}-team-${Date.now()}`,
+      problemId: selectedProblem.id,
+      solutionTitle: title,
+      summary,
+      roles,
+      ownerName: proposer,
+      ownerEmail: ownerEmail || "",
+      members: [
+        {
+          name: proposer,
+          email: ownerEmail || "",
+          joinedAt: Date.now(),
+          joinedByCurrentUser: true,
+        },
+      ],
+      createdAt: Date.now(),
+      ownedByCurrentUser: true,
+      joinedByCurrentUser: true,
     });
-  }
+    saveTeamsForProblem(selectedProblem.id, teams, map);
+    saveCurrentUser(proposer, ownerEmail || "");
+    setInterested(selectedProblem.id, true);
+    state.problem = selectedProblem.id;
+    problemFilterEl.value = state.problem;
+    formEl.reset();
+    renderMarketplace();
+  });
 
   if (searchInput) {
+    searchInput.placeholder = "Search teams, solution names, roles, owners...";
     searchInput.addEventListener("input", (event) => {
-      searchTerm = event.target.value.trim().toLowerCase();
-      if (selectedProblem) {
-        renderSolutionsForProblem(selectedProblem);
-      } else {
-        renderDirectory();
-      }
+      state.searchTerm = event.target.value.trim().toLowerCase();
+      renderMarketplace();
     });
   }
 
-  if (!selectedProblem) {
-    renderDirectory();
-    return;
+  roleFilterEl.addEventListener("change", () => {
+    state.role = roleFilterEl.value || "all";
+    renderMarketplace();
+  });
+
+  sectorFilterEl.addEventListener("change", () => {
+    state.sector = sectorFilterEl.value || "all";
+    renderMarketplace();
+  });
+
+  problemFilterEl.addEventListener("change", () => {
+    state.problem = problemFilterEl.value || "all";
+    renderMarketplace();
+  });
+
+  if (openOnlyBtn) {
+    openOnlyBtn.addEventListener("click", () => {
+      state.openOnly = !state.openOnly;
+      openOnlyBtn.classList.toggle("active", state.openOnly);
+      renderMarketplace();
+    });
   }
 
-  renderSolutionsForProblem(selectedProblem);
-  wireForm(selectedProblem);
+  if (newOnlyBtn) {
+    newOnlyBtn.addEventListener("click", () => {
+      state.newOnly = !state.newOnly;
+      newOnlyBtn.classList.toggle("active", state.newOnly);
+      renderMarketplace();
+    });
+  }
+
+  syncProblemOptions();
+  renderMarketplace();
 }
 
 function renderProblemPage() {

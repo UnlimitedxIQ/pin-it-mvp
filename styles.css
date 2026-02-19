@@ -312,7 +312,17 @@ textarea {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  animation: cardIn 220ms ease-out both;
+  animation: cardIn 220ms ease-out;
+  transition: transform 170ms ease-out, border-color 170ms ease-out;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: scale(1.03);
+  z-index: 3;
+  border-color: var(--swiss-accent);
 }
 
 .card::before {
