@@ -34,34 +34,50 @@
 
   <section class="page-hero">
     <h1>Solution Teams</h1>
-    <p id="solutionsContext">Open an issue to join teams, ask questions about proposed solutions, or start your own team.</p>
+    <p id="solutionsContext">Browse all teams, join collaborators, and launch your own solution team.</p>
   </section>
 
   <main class="simple-layout">
-    <section id="problemDirectory" class="problem-directory"></section>
+    <section class="controls-strip">
+      <div class="chip-row">
+        <button id="marketOpenOnly" type="button" class="chip">Needs Members</button>
+        <button id="marketNewOnly" type="button" class="chip">New Teams</button>
+      </div>
+      <div class="sector-list">
+        <select id="marketRoleFilter" class="input" aria-label="Filter by role"></select>
+        <select id="marketSectorFilter" class="input" aria-label="Filter by sector"></select>
+        <select id="marketProblemFilter" class="input" aria-label="Filter by problem"></select>
+      </div>
+      <div class="stats-inline">
+        <span><strong id="teamMarketCounts">0 teams shown • 0 open roles</strong></span>
+      </div>
+    </section>
 
-    <section id="solutionsPanel" class="solutions-panel hidden">
-      <div id="solutionsGrid" class="solutions-grid"></div>
+    <section class="solutions-panel">
+      <div id="teamMarketplaceGrid" class="solutions-grid" aria-live="polite"></div>
 
       <section class="solution-form-wrap">
-        <h2>Propose a Solution</h2>
+        <h2>Start a Solution Team</h2>
         <form id="solutionForm">
+          <label for="solutionProblemSelect">Problem</label>
+          <select id="solutionProblemSelect" class="input" required></select>
+
           <label for="proposerName">Your Name</label>
           <input id="proposerName" class="input" type="text" required />
 
           <label for="ownerEmail">Your Email (optional)</label>
           <input id="ownerEmail" class="input" type="email" placeholder="you@example.com" />
 
-          <label for="solutionTitle">Solution Title</label>
+          <label for="solutionTitle">Solution Name</label>
           <input id="solutionTitle" class="input" type="text" required />
 
-          <label for="solutionSummary">How would this solve the problem?</label>
+          <label for="solutionSummary">How does this solve the problem?</label>
           <textarea id="solutionSummary" class="input input-area" rows="4" required></textarea>
 
           <label for="neededRoles">Roles Needed (comma-separated)</label>
           <input id="neededRoles" class="input" type="text" placeholder="Full-Stack Engineer, Sales Lead, Designer" required />
 
-          <button type="submit" class="primary-btn full-width">Publish Proposal</button>
+          <button type="submit" class="primary-btn full-width">Create Team</button>
         </form>
       </section>
     </section>
