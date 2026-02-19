@@ -104,10 +104,14 @@ textarea {
   display: grid;
   place-items: center;
   border: 2px solid var(--swiss-border);
-  background: var(--swiss-accent);
-  color: var(--swiss-bg);
-  font-weight: 900;
-  letter-spacing: 0.04em;
+  background: var(--swiss-bg);
+  overflow: hidden;
+}
+
+.brand-logo {
+  width: 30px;
+  height: 30px;
+  display: block;
 }
 
 .brand-name {

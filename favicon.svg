@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Pin It">
+  <defs>
+    <style>
+      .g{fill:none;stroke:#0f6457;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+      .d{fill:none;stroke:#111111;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+      .n{fill:none;stroke:#c8b06d;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <path class="g" d="M63 103c-6-14-7-35-6-57"/>
+  <path class="d" d="M65 103c6-14 7-35 6-57"/>
+  <path class="g" d="M58 71c-10 24-25 31-43 36"/>
+  <path class="d" d="M70 71c10 24 25 31 43 36"/>
+  <path class="g" d="M57 49l-18-18"/>
+  <path class="g" d="M58 56l-30 0"/>
+  <path class="g" d="M58 42l0-22"/>
+  <path class="d" d="M71 49l18-18"/>
+  <path class="d" d="M70 56l30 0"/>
+  <path class="d" d="M70 42l0-22"/>
+  <circle class="n" cx="24" cy="56" r="5"/>
+  <circle class="n" cx="31" cy="31" r="5"/>
+  <circle class="n" cx="58" cy="17" r="5"/>
+  <circle class="n" cx="97" cy="31" r="5"/>
+  <circle class="d" cx="104" cy="56" r="5"/>
+</svg>
