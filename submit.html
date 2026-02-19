@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pin It | Submit Problem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="submit">
+  <header class="topbar">
+    <a class="brand-wrap brand-link" href="index.html" aria-label="Pin It Home">
+      <div class="brand-badge">P</div>
+      <div>
+        <p class="brand-name">Pin It</p>
+        <p class="brand-sub">Crowdsourced startup opportunities</p>
+      </div>
+    </a>
+
+    <nav class="top-nav" aria-label="Primary">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="discover.html" class="nav-link">Discover</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
+    </nav>
+
+    <label class="search-wrap" for="searchInput">
+      <input id="searchInput" type="search" placeholder="Search problems, sectors, solutions..." />
+    </label>
+
+    <a class="primary-btn active-btn" href="submit.html">Submit Problem</a>
+  </header>
+
+  <section class="page-hero">
+    <h1>Submit a Market Problem</h1>
+    <p>Share a validated pain point so founders can collaborate and build solutions faster.</p>
+  </section>
+
+  <main class="simple-layout">
+    <section class="form-wrap">
+      <form id="submitForm">
+        <label for="problemTitle">Problem Title</label>
+        <input id="problemTitle" class="input" type="text" required />
+
+        <label for="sector">Sector</label>
+        <input id="sector" class="input" type="text" required />
+
+        <label for="problemSummary">Problem Summary</label>
+        <textarea id="problemSummary" class="input input-area" rows="5" required></textarea>
+
+        <label for="evidenceLinks">Evidence Links</label>
+        <textarea id="evidenceLinks" class="input input-area" rows="4" placeholder="Paste links from forums, reviews, community posts..."></textarea>
+
+        <button type="submit" class="primary-btn full-width">Submit for Review</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="reddit-problems.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+

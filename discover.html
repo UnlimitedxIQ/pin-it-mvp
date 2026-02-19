@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pin It | Discover</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="discover" data-default-chip="high">
+  <header class="topbar">
+    <a class="brand-wrap brand-link" href="index.html" aria-label="Pin It Home">
+      <div class="brand-badge">P</div>
+      <div>
+        <p class="brand-name">Pin It</p>
+        <p class="brand-sub">Crowdsourced startup opportunities</p>
+      </div>
+    </a>
+
+    <nav class="top-nav" aria-label="Primary">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="discover.html" class="nav-link active">Discover</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
+    </nav>
+
+    <label class="search-wrap" for="searchInput">
+      <input id="searchInput" type="search" placeholder="Search problems, sectors, solutions..." />
+    </label>
+
+    <a class="primary-btn" href="submit.html">Submit Problem</a>
+  </header>
+
+  <main class="full-feed-layout">
+    <section class="controls-strip">
+      <div id="sectorFilters" class="sector-list"></div>
+      <div class="chip-row" id="quickChips">
+        <button class="chip" data-chip="all">All</button>
+        <button class="chip active" data-chip="high">High Demand</button>
+        <button class="chip" data-chip="new">New This Week</button>
+        <button class="chip" data-chip="funding">Investor Interest</button>
+      </div>
+      <div class="stats-inline">
+        <span><strong id="problemCount">0</strong> problems</span>
+        <span><strong id="interestCount">0</strong> interested</span>
+        <span><strong id="teamCount">0</strong> teams</span>
+      </div>
+    </section>
+
+    <section class="feed-area">
+      <div id="pinFeed" class="feed-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="card-body">
+        <h3 class="card-title"><a class="problem-link" href="problem.html">Problem</a></h3>
+        <div class="card-meta">
+          <span class="meta-item"></span>
+          <span class="meta-item"></span>
+        </div>
+        <div class="card-actions">
+          <button type="button" class="ghost-btn interested-btn">I'm Interested</button>
+          <a class="ghost-btn view-solutions-link" href="solutions.html">View Solutions</a>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="reddit-problems.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+

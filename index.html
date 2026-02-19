@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pin It | Problem Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home" data-default-chip="all">
+  <header class="topbar">
+    <a class="brand-wrap brand-link" href="index.html" aria-label="Pin It Home">
+      <div class="brand-badge">P</div>
+      <div>
+        <p class="brand-name">Pin It</p>
+        <p class="brand-sub">Crowdsourced startup opportunities</p>
+      </div>
+    </a>
+
+    <nav class="top-nav" aria-label="Primary">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="discover.html" class="nav-link">Discover</a>
+      <a href="solutions.html" class="nav-link">Solutions</a>
+    </nav>
+
+    <label class="search-wrap" for="searchInput">
+      <input id="searchInput" type="search" placeholder="Search problems, sectors, solutions..." />
+    </label>
+
+    <a class="primary-btn" href="submit.html">Submit Problem</a>
+  </header>
+
+  <main class="simple-layout">
+    <section class="home-header-strip">
+      <h1>Your Workspace</h1>
+      <p id="homeCounts">0 interested • 0 proposed • 0 joined</p>
+    </section>
+
+    <section class="home-layout">
+      <aside class="home-sidebar">
+        <h2>Interested Problems</h2>
+        <div id="homeProblemList" class="home-problem-list"></div>
+      </aside>
+      <section id="homeDetail" class="home-detail"></section>
+    </section>
+  </main>
+
+  <script src="reddit-problems.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+

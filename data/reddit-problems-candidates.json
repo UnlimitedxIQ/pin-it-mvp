@@ -1,0 +1,367 @@
+[
+  {
+    "id": "reddit-issue-close-chargeback",
+    "title": "Close Chargeback",
+    "sector": "FinTech",
+    "summary": "Recurring complaints mention chargeback, resolved, adviser. Evidence: 4 comments across 1 subreddits.",
+    "interested": 371,
+    "teams": 0,
+    "demand": "low",
+    "fresh": true,
+    "investor": false,
+    "complaintCount": 4,
+    "sourcePlatform": "Reddit",
+    "sourceSubreddits": [
+      "personalfinance"
+    ],
+    "complaints": [
+      {
+        "text": "Never cancel a chargeback unless the issue behind it has been resolved 100% to your satisfaction. Not promised to be resolved, but resolved.",
+        "subreddit": "personalfinance",
+        "author": "Gonkulator5000",
+        "score": 1910,
+        "createdUtc": 1771425711.0,
+        "postTitle": "Seller pressuring me to close chargeback case",
+        "sourceUrl": "https://www.reddit.com/r/personalfinance/comments/1r84l43/seller_pressuring_me_to_close_chargeback_case/o626i9k/"
+      },
+      {
+        "text": "This. Once you close the chargeback it is ***DONE*** - you can\u2019t open another one about that charge ever again. Your only recourse at that point is the courts, and with an international seller you\u2019re never seeing that money again. Your credit card issuer and the network they operate under have all sorts of procedures in place for exactly this kind of dispute. You\u2019re paying for them (in interchange fees and interest), so use them: You communicate with the card issuer about the chargeback (and let them know the seller is pressuring you to close it even though the issue is *not* resolved).",
+        "subreddit": "personalfinance",
+        "author": "voretaq7",
+        "score": 527,
+        "createdUtc": 1771428129.0,
+        "postTitle": "Seller pressuring me to close chargeback case",
+        "sourceUrl": "https://www.reddit.com/r/personalfinance/comments/1r84l43/seller_pressuring_me_to_close_chargeback_case/o62eunt/"
+      },
+      {
+        "text": "I wouldn't touch it until the issue with the adviser is resolved, because the resolution should be that the adviser restores OP to his original position, at the adviser's expense. Putting that money back into the market doesn't change that fundamental but does make it messier.",
+        "subreddit": "personalfinance",
+        "author": "u38cg2",
+        "score": 272,
+        "createdUtc": 1769093466.0,
+        "postTitle": "Investment advisor sold all of my mutual funds without my consent. Help!!",
+        "sourceUrl": "https://www.reddit.com/r/personalfinance/comments/1qjihev/investment_advisor_sold_all_of_my_mutual_funds/o11zrgo/"
+      },
+      {
+        "text": "If you close the chargeback, you lose the money as they have already told you they won't refund you. Keep the chargeback open, let your credit card company investigate. Generally never close a chargeback once you've opened it if you had already reached out to the merchant to resolve it. Their chance to resolve it without a chargeback is at that point. If they fail to do so, they are unlikely to resolve it if you close the chargeback as they know you will be not allowed to re-open the chargeback if they once again stonewall you.",
+        "subreddit": "personalfinance",
+        "author": "ElementPlanet",
+        "score": 124,
+        "createdUtc": 1771425506.0,
+        "postTitle": "Seller pressuring me to close chargeback case",
+        "sourceUrl": "https://www.reddit.com/r/personalfinance/comments/1r84l43/seller_pressuring_me_to_close_chargeback_case/o625tsi/"
+      }
+    ],
+    "solutions": [],
+    "status": "candidate"
+  },
+  {
+    "id": "reddit-issue-small-builders",
+    "title": "Small Builders",
+    "sector": "Business",
+    "summary": "Recurring complaints mention manual, outreach, trust. Evidence: 4 comments across 1 subreddits.",
+    "interested": 37,
+    "teams": 0,
+    "demand": "low",
+    "fresh": true,
+    "investor": false,
+    "complaintCount": 4,
+    "sourcePlatform": "Reddit",
+    "sourceSubreddits": [
+      "entrepreneur"
+    ],
+    "complaints": [
+      {
+        "text": "This is basically the cost of removing friction too early. Automation works when trust already exist. when it doesn't, scale just amplifies noise. the part that stands out to me is that the \"slow\" work ins't inefficient, it's doing validation. you're not just finding users, you're proving to yourself that the problem is real and that you can explain it clearly to another human. Big companies can burn reputation because they can buy distribution again. small builders don't get that luxury. trust compounds slower, but it compounds.",
+        "subreddit": "entrepreneur",
+        "author": "PrinceUkaegbu",
+        "score": 23,
+        "createdUtc": 1769525755.0,
+        "postTitle": "We automated everything and now nobody trusts anything",
+        "sourceUrl": "https://www.reddit.com/r/Entrepreneur/comments/1qof5yc/we_automated_everything_and_now_nobody_trusts/o20x4ei/"
+      },
+      {
+        "text": "This is exactly right. Trust is the only currency small builders have. Automation at scale = noise. Manual outreach feels slow but actually converts better because people know there's a human on the other side. Quality over quantity always wins for solo founders.",
+        "subreddit": "entrepreneur",
+        "author": "Independent_Design21",
+        "score": 15,
+        "createdUtc": 1769526928.0,
+        "postTitle": "We automated everything and now nobody trusts anything",
+        "sourceUrl": "https://www.reddit.com/r/Entrepreneur/comments/1qof5yc/we_automated_everything_and_now_nobody_trusts/o2117gf/"
+      },
+      {
+        "text": "**\u201cWrite a reflective Reddit-style post from the perspective of a solo founder/developer who\u2019s frustrated with extreme automation in marketing and outreach. Talk about how developers built tools to scale emails and AI-written messages, but now the internet feels like noise and nobody trusts anything. Contrast mass automation with slow, manual, human outreach. Emphasize lessons learned, trust as a small builder\u2019s only currency, and the idea that maybe the answer isn\u2019t better tools but doing the hard work manually. Keep the tone thoughtful, slightly conflicted, and personal. No hype, no emojis.\u201d**",
+        "subreddit": "entrepreneur",
+        "author": "wasthisyourprompt",
+        "score": 5,
+        "createdUtc": 1769544117.0,
+        "postTitle": "We automated everything and now nobody trusts anything",
+        "sourceUrl": "https://www.reddit.com/r/Entrepreneur/comments/1qof5yc/we_automated_everything_and_now_nobody_trusts/o22v4l6/"
+      },
+      {
+        "text": "This is the real competitive advantage for solo founders honestly. Big companies can't do manual outreach at scale, but you can spend 30 minutes finding 5 perfect people and actually help them. That converts way better than 500 automated messages. One tip: when you find those manual wins, ask them where else people like them hang out. You're not automating the outreach, you're learning where to focus your manual effort. Still human, just smarter about where you spend the time. Trust is expensive to build and cheap to destroy. You're playing the right game.",
+        "subreddit": "entrepreneur",
+        "author": "QuimbyDigital",
+        "score": 3,
+        "createdUtc": 1769546460.0,
+        "postTitle": "We automated everything and now nobody trusts anything",
+        "sourceUrl": "https://www.reddit.com/r/Entrepreneur/comments/1qof5yc/we_automated_everything_and_now_nobody_trusts/o233pip/"
+      }
+    ],
+    "solutions": [],
+    "status": "candidate"
+  },
+  {
+    "id": "reddit-issue-free-shipping",
+    "title": "Free Shipping",
+    "sector": "Commerce",
+    "summary": "Recurring complaints mention shipping, sales, prices. Evidence: 4 comments across 1 subreddits.",
+    "interested": 33,
+    "teams": 0,
+    "demand": "low",
+    "fresh": true,
+    "investor": false,
+    "complaintCount": 4,
+    "sourcePlatform": "Reddit",
+    "sourceSubreddits": [
+      "ecommerce"
+    ],
+    "complaints": [
+      {
+        "text": "If you are barely breaking even on most sales, is losing some of those customers really that big of a loss? Charge for shipping or up your prices. Or both.",
+        "subreddit": "ecommerce",
+        "author": "lucerndia",
+        "score": 11,
+        "createdUtc": 1771455506.0,
+        "postTitle": "Shipping costs are killing my margins and I can\u2019t figure out how to price competitively anymore",
+        "sourceUrl": "https://www.reddit.com/r/ecommerce/comments/1r8i4w7/shipping_costs_are_killing_my_margins_and_i_cant/o656iy3/"
+      },
+      {
+        "text": "Price your shipping as priority? Priorit mail, fedex expres etc. High rates but 2day shipping with zero issues. I noticed an up tick in sales for fishing product when i added the option to have it delivered quickly for an upcharge.",
+        "subreddit": "ecommerce",
+        "author": "North-Yak-7216",
+        "score": 3,
+        "createdUtc": 1771456835.0,
+        "postTitle": "Shipping costs are killing my margins and I can\u2019t figure out how to price competitively anymore",
+        "sourceUrl": "https://www.reddit.com/r/ecommerce/comments/1r8i4w7/shipping_costs_are_killing_my_margins_and_i_cant/o65aq2o/"
+      },
+      {
+        "text": "Using a label service to get a discount on shipping can help. I use easypost, but there are others. It is still expensive. I just price it into everything. Raising my prices 25%, which is the average cost of my shipping, and just saying \u201cfree shipping\u201d on everything had no impact on my sales. May have even helped it. If someone buys multiple items, I make more money.",
+        "subreddit": "ecommerce",
+        "author": "badgko",
+        "score": 1,
+        "createdUtc": 1771457077.0,
+        "postTitle": "Shipping costs are killing my margins and I can\u2019t figure out how to price competitively anymore",
+        "sourceUrl": "https://www.reddit.com/r/ecommerce/comments/1r8i4w7/shipping_costs_are_killing_my_margins_and_i_cant/o65bgnj/"
+      },
+      {
+        "text": "I bet you\u2019re priced too low. I sell jewelry and tried to undercut my competitors on price and shipping and was having the same exact problem. I bought myself in line with everyone else and it\u2019s worked like a charm. There\u2019s a psychology to pricing and shipping costs that I was overlooking. And for all people on Reddit like to preach about free shipping, my day job is at an ecomm marketing agency, and I can tell you NO ONE has free shipping at $50. It\u2019s usually at least 75, if not more. (I actually made a list one weekend)",
+        "subreddit": "ecommerce",
+        "author": "AppropriateSite3768",
+        "score": 1,
+        "createdUtc": 1771455640.0,
+        "postTitle": "Shipping costs are killing my margins and I can\u2019t figure out how to price competitively anymore",
+        "sourceUrl": "https://www.reddit.com/r/ecommerce/comments/1r8i4w7/shipping_costs_are_killing_my_margins_and_i_cant/o656ynq/"
+      }
+    ],
+    "solutions": [],
+    "status": "candidate"
+  },
+  {
+    "id": "reddit-issue-compose-file",
+    "title": "Compose File",
+    "sector": "Business",
+    "summary": "Recurring complaints mention compose, app, sqlite. Evidence: 4 comments across 1 subreddits.",
+    "interested": 32,
+    "teams": 0,
+    "demand": "low",
+    "fresh": true,
+    "investor": false,
+    "complaintCount": 4,
+    "sourcePlatform": "Reddit",
+    "sourceSubreddits": [
+      "indiehackers"
+    ],
+    "complaints": [
+      {
+        "text": "The \u201ccompose up \u2192 connection refused\u201d spiral is so real it\u2019s almost a rite of passage at this point. I\u2019ve burned more Saturday nights than I\u2019d like to admit just trying to get Redis and Postgres to talk to each other, and somewhere around midnight I\u2019d realize I\u2019d spent six hours on infrastructure and zero hours on the actual thing I wanted to build. What I like about what you\u2019ve done here is that you attacked the real problem \u2014 which isn\u2019t automation, it\u2019s the setup tax that kills momentum before you even get started. Embedded Postgres and Redis in one image feels almost too simple, but that\u2019s kind of the point, isn\u2019t it? The n8n migration feature is what genuinely caught my attention though. Switching infra mid-project always felt like swapping engines on a moving car to me, so a one-click JSON import that just works would\u2019ve saved me from at least two abandoned projects. Pulling this over the weekend. Curious though \u2014 when a node in the import doesn\u2019t map cleanly, does it flag it for you or do you find out the hard way when the flow fails?",
+        "subreddit": "indiehackers",
+        "author": "arnoldgamboaph",
+        "score": 2,
+        "createdUtc": 1771416705.0,
+        "postTitle": "The weekend Redis and compose turned my self-host dreams into a nightmare \u2013 until one Docker command + n8n migration made it actually doable",
+        "sourceUrl": "https://www.reddit.com/r/indiehackers/comments/1r7r80p/the_weekend_redis_and_compose_turned_my_selfhost/o61gb0a/"
+      },
+      {
+        "text": "Ha, the compose-up-connection-refused loop is basically a hazing ritual at this point. One thing that saved me a lot of Saturday nights: add healthchecks to every service in your compose file and use depends_on with condition: service_healthy. That way Redis actually accepts connections before your app tries to hit it. Also docker compose logs --follow with grep on error patterns catches 80% of issues faster than staring at individual container logs.",
+        "subreddit": "indiehackers",
+        "author": "PushPlus9069",
+        "score": 1,
+        "createdUtc": 1771423588.0,
+        "postTitle": "The weekend Redis and compose turned my self-host dreams into a nightmare \u2013 until one Docker command + n8n migration made it actually doable",
+        "sourceUrl": "https://www.reddit.com/r/indiehackers/comments/1r7r80p/the_weekend_redis_and_compose_turned_my_selfhost/o61zmjd/"
+      },
+      {
+        "text": "100% agree on starting with one service. I tell everyone the same thing \u2014 your compose file should grow with your product, not ahead of it. Start with app + sqlite, add postgres when sqlite actually hurts, add redis when you have a real caching problem. Premature infrastructure is just premature optimization wearing a DevOps hat.",
+        "subreddit": "indiehackers",
+        "author": "PushPlus9069",
+        "score": 1,
+        "createdUtc": 1771410210.0,
+        "postTitle": "The weekend Redis and compose turned my self-host dreams into a nightmare \u2013 until one Docker command + n8n migration made it actually doable",
+        "sourceUrl": "https://www.reddit.com/r/indiehackers/comments/1r7r80p/the_weekend_redis_and_compose_turned_my_selfhost/o612ve6/"
+      },
+      {
+        "text": "100% this. I've shipped a macOS app, a mobile app, and a web platform \u2014 every time the infra setup was the part that almost killed the project. My rule now: if the DevOps takes longer than the MVP feature, you're solving the wrong problem first. Start with the simplest deploy that works (even a single VPS with sqlite) and earn your way to the complex stack when traffic actually demands it.",
+        "subreddit": "indiehackers",
+        "author": "PushPlus9069",
+        "score": 1,
+        "createdUtc": 1771406574.0,
+        "postTitle": "The weekend Redis and compose turned my self-host dreams into a nightmare \u2013 until one Docker command + n8n migration made it actually doable",
+        "sourceUrl": "https://www.reddit.com/r/indiehackers/comments/1r7r80p/the_weekend_redis_and_compose_turned_my_selfhost/o60w9qb/"
+      }
+    ],
+    "solutions": [],
+    "status": "candidate"
+  },
+  {
+    "id": "reddit-issue-bad-luck",
+    "title": "Bad Luck",
+    "sector": "Commerce",
+    "summary": "Recurring complaints mention deal, demo, bad. Evidence: 3 comments across 1 subreddits.",
+    "interested": 33,
+    "teams": 0,
+    "demand": "low",
+    "fresh": true,
+    "investor": false,
+    "complaintCount": 3,
+    "sourcePlatform": "Reddit",
+    "sourceSubreddits": [
+      "sales"
+    ],
+    "complaints": [
+      {
+        "text": "It happens at a lot of places. The one time I sold cars, there was this one guy who did nothing but greet customers so he could demo anyone who was there to see a rep with the day off. Guaranteed split. Every deal he had was a split. Kept him top 5 usually. At my current job ALL THAT MATTERS is who closed the deal. Lost a small deal my 3rd month to our smaller office in the suburbs because the client emailed my paperwork to them. They processed it and got the deal. I called before it was processed and the manager said that they had everything and they were processing the deal they had. I went from the nicest friend to a scorned lover real quick. That office gets no love from us unless we're contractually gaining from the help. Fuck professionally \"deal-cutters.\"",
+        "subreddit": "sales",
+        "author": "TulsaOUfan",
+        "score": 42,
+        "createdUtc": 1770376008.0,
+        "postTitle": "Just netted a 17k bonus after exploiting comp plan loophole",
+        "sourceUrl": "https://www.reddit.com/r/sales/comments/1qx7nq6/just_netted_a_17k_bonus_after_exploiting_comp/o3vs0ua/"
+      },
+      {
+        "text": "7500 is not enough to share. Thats not a monster deal. But example if you want to gain some brownie points: I had a 10 month deal with over 60 people on client side and 20+ on mine. 8 of those being sales engineers or specialists. When the deal closed it was the second largest of the year for the company. 120k before taxes to me personally. The 8 presales folks all got their variable/bonus as well. But it wasnt even close to 120. When we had our user conference we were all there and I booked a dinner for the 9 of us. Steaks. Wine. Vegas. $4200 after tip. Thats how you say thanks. Not sharing commission.",
+        "subreddit": "sales",
+        "author": "tryan2tellu",
+        "score": 29,
+        "createdUtc": 1771439242.0,
+        "postTitle": "How much commission should I share as a thank you?",
+        "sourceUrl": "https://www.reddit.com/r/sales/comments/1r8ajx8/how_much_commission_should_i_share_as_a_thank_you/o63k2cd/"
+      },
+      {
+        "text": "Exactly... Just because you're at demo it doesn't mean you won it... Talking about commissions before a deal closes is bad luck",
+        "subreddit": "sales",
+        "author": "Dry_Squirrel_8854",
+        "score": 8,
+        "createdUtc": 1771440019.0,
+        "postTitle": "How much commission should I share as a thank you?",
+        "sourceUrl": "https://www.reddit.com/r/sales/comments/1r8ajx8/how_much_commission_should_i_share_as_a_thank_you/o63n0nm/"
+      }
+    ],
+    "solutions": [],
+    "status": "candidate"
+  },
+  {
+    "id": "reddit-issue-basically-live",
+    "title": "Basically Live",
+    "sector": "Business",
+    "summary": "Recurring complaints mention case, problem, ve. Evidence: 3 comments across 1 subreddits.",
+    "interested": 26,
+    "teams": 0,
+    "demand": "low",
+    "fresh": true,
+    "investor": false,
+    "complaintCount": 3,
+    "sourcePlatform": "Reddit",
+    "sourceSubreddits": [
+      "productmanagement"
+    ],
+    "complaints": [
+      {
+        "text": "I\u2019ve seen this format before \u2014 it\u2019s basically a live collaboration test. They want to see how you think with engineers in real time, not just how you answer frameworks. Expect something like: \u2013 vague problem \u2013 technical constraints thrown at you \u2013 pushback from \u201cengineering\u201d \u2013 tradeoff discussion For APM it\u2019s actually a good sign. It means they care about cross-functional skills, not just textbook answers. If it\u2019s below market but you need income, treat it as reps. Worst case you get practice. Best case you show you can stay calm, clarify requirements, prioritize, and not get defensive when challenged. Big thing: don\u2019t try to \u201cwin.\u201d Try to collaborate. That\u2019s usually what they\u2019re testing.",
+        "subreddit": "productmanagement",
+        "author": "Charming_Ad_5319",
+        "score": 11,
+        "createdUtc": 1771462603.0,
+        "postTitle": "APM Interview Process",
+        "sourceUrl": "https://www.reddit.com/r/ProductManagement/comments/1r8l0fh/apm_interview_process/o65s3l8/"
+      },
+      {
+        "text": "\u201cProduct &amp; Engineering working session\u201d usually means they want to see how you think in real time and how you collaborate with technical folks. Less theory, more how you break down a problem with engineers in the room. It\u2019s often something like: here\u2019s a vague feature request or system problem, talk through how you\u2019d scope it, clarify constraints, identify risks, and align on next steps. They\u2019re watching how you ask questions, whether you understand tradeoffs, and how you handle ambiguity. For an APM, they\u2019re not expecting perfect answers. They want to see structure and coachability. Given the pay is below market and you\u2019ve been searching for 7 months, I\u2019d treat this as reps plus a real opportunity. Even if it doesn\u2019t work out, this format is useful practice. The key is to slow down, clarify the problem first, surface constraints, and talk through decisions clearly.",
+        "subreddit": "productmanagement",
+        "author": "mengylol",
+        "score": 5,
+        "createdUtc": 1771462815.0,
+        "postTitle": "APM Interview Process",
+        "sourceUrl": "https://www.reddit.com/r/ProductManagement/comments/1r8l0fh/apm_interview_process/o65sps2/"
+      },
+      {
+        "text": "I\u2019ve done a few of these. It\u2019s basically a live \u201ccan we work with you\u201d test. They\u2019ll give you something messy and see how you clarify scope, handle constraints, and respond when engineering pushes back. For APM they\u2019re not looking for brilliance, they\u2019re looking for structure and humility. Big tip: slow down. Restate the problem, ask what success looks like, surface tradeoffs out loud. Don\u2019t try to impress with jargon. Show you can think clearly and collaborate. Also given you\u2019ve been searching 7 months, take it. Worst case it\u2019s high quality reps. Best case you land something and stabilize.",
+        "subreddit": "productmanagement",
+        "author": "Status-Lettuce-611",
+        "score": 2,
+        "createdUtc": 1771463478.0,
+        "postTitle": "APM Interview Process",
+        "sourceUrl": "https://www.reddit.com/r/ProductManagement/comments/1r8l0fh/apm_interview_process/o65ulzb/"
+      }
+    ],
+    "solutions": [],
+    "status": "candidate"
+  },
+  {
+    "id": "reddit-issue-sales-team",
+    "title": "Sales Team",
+    "sector": "Commerce",
+    "summary": "Recurring complaints mention sales, marketing, team. Evidence: 3 comments across 1 subreddits.",
+    "interested": 25,
+    "teams": 0,
+    "demand": "low",
+    "fresh": true,
+    "investor": false,
+    "complaintCount": 3,
+    "sourcePlatform": "Reddit",
+    "sourceSubreddits": [
+      "marketing"
+    ],
+    "complaints": [
+      {
+        "text": "There's not enough information. Sales using a different crm than marketing is a red flag. Are the leads garbage? Is the sales team garbage? Are there consistent processes? Is there a solid automation setup between CRMs? What's the average response time to MQLs? There's another poster saying he fired the marketing team and hired meeting setters. I call bullshit, but regardless, most CEOs don't give a shit about any number that isn't revenue generating. The farther down attribution goes the more lost the CEO is on impact you generated in that revenue. If the MQL is event stage 3 but sale is after event stage 30, you will have a hard time selling the CEO that you had impact in that sale. Get used to fighting for your value. We talk about cost for acquisition, cost for MQL vs SQL, cost for this cost for that because CFOs run modern marketing and sales teams, not CEOs. And that's why so many companies fail. Advertising days were simple. Spend $50,000 on a billboard and generate $150,000 in new revenue. You just made a $100,000 profit from the advertising department. That's easy for a CEO to ignore the CFO when he says \"well you don't know if they would have come in without the billboard. Maybe if we cut billboards they'll come in anyway\". Attribution has become so convoluted for most companies and everyone fights for who \"sold\" the lead that the CEO cant extrapolate on if marketing had any impact in generating that revenue from the CFO. So you get cut and nobody respects you thinking you provide tiktok dances.",
+        "subreddit": "marketing",
+        "author": "calmwhiteguy",
+        "score": 9,
+        "createdUtc": 1771441190.0,
+        "postTitle": "Marketing ,Sales alignment is killing me. Anyone actually solved this?",
+        "sourceUrl": "https://www.reddit.com/r/marketing/comments/1r8b32m/marketing_sales_alignment_is_killing_me_anyone/o63rgq0/"
+      },
+      {
+        "text": "There is already a lot of good advice above, so I\u2019ll just add a two key points. First, it sounds like there\u2019s a significant misalignment between marketing and sales. You need a clear, shared definition of what counts as a marketing-qualified lead versus a sales-qualified lead. Once both sides agree and buy into that definition, it becomes much harder to argue over lead quality and it reduces ambiguity substantially. Second, I\u2019m consistently surprised by how many marketers have little real understanding of sales. A strong marketer spends time with the sales team, observes the full sales cycle, listens to customer objections, and understands the emotional impact the product or service has on the customer. You will not learn that by staying in the office. You have to be in the field with sales. This is actually something I have used as a screening criterion when hiring for marketing roles. I ask how they interact with customers and how closely they work with the sales team. I want the marketer who stands with the sales team at the point of display if it\u2019s a product, or sits in on pitches and listens to real conversations if its services. That is how you learn how to market effectively to those customers. If a marketer is not doing that, then they are essentially marketing in the blind.",
+        "subreddit": "marketing",
+        "author": "Archos20",
+        "score": 2,
+        "createdUtc": 1771460042.0,
+        "postTitle": "Marketing ,Sales alignment is killing me. Anyone actually solved this?",
+        "sourceUrl": "https://www.reddit.com/r/marketing/comments/1r8b32m/marketing_sales_alignment_is_killing_me_anyone/o65kg1e/"
+      },
+      {
+        "text": "Yes, I fired my marketing team and hired remote appointment setters to set appointments for the sales team. It was a bit cheaper than the marketing cost",
+        "subreddit": "marketing",
+        "author": "jucktar",
+        "score": -5,
+        "createdUtc": 1771440111.0,
+        "postTitle": "Marketing ,Sales alignment is killing me. Anyone actually solved this?",
+        "sourceUrl": "https://www.reddit.com/r/marketing/comments/1r8b32m/marketing_sales_alignment_is_killing_me_anyone/o63nd3j/"
+      }
+    ],
+    "solutions": [],
+    "status": "candidate"
+  }
+]

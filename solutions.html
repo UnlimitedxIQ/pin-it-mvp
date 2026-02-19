@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pin It | Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="solutions">
+  <header class="topbar">
+    <a class="brand-wrap brand-link" href="index.html" aria-label="Pin It Home">
+      <div class="brand-badge">P</div>
+      <div>
+        <p class="brand-name">Pin It</p>
+        <p class="brand-sub">Crowdsourced startup opportunities</p>
+      </div>
+    </a>
+
+    <nav class="top-nav" aria-label="Primary">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="discover.html" class="nav-link">Discover</a>
+      <a href="solutions.html" class="nav-link active">Solutions</a>
+    </nav>
+
+    <label class="search-wrap" for="searchInput">
+      <input id="searchInput" type="search" placeholder="Search teams, owners, or roles..." />
+    </label>
+
+    <a class="primary-btn" href="submit.html">Submit Problem</a>
+  </header>
+
+  <section class="page-hero">
+    <h1>Solution Teams</h1>
+    <p id="solutionsContext">Open an issue to join teams, ask questions about proposed solutions, or start your own team.</p>
+  </section>
+
+  <main class="simple-layout">
+    <section id="problemDirectory" class="problem-directory"></section>
+
+    <section id="solutionsPanel" class="solutions-panel hidden">
+      <div id="solutionsGrid" class="solutions-grid"></div>
+
+      <section class="solution-form-wrap">
+        <h2>Propose a Solution</h2>
+        <form id="solutionForm">
+          <label for="proposerName">Your Name</label>
+          <input id="proposerName" class="input" type="text" required />
+
+          <label for="ownerEmail">Your Email (optional)</label>
+          <input id="ownerEmail" class="input" type="email" placeholder="you@example.com" />
+
+          <label for="solutionTitle">Solution Title</label>
+          <input id="solutionTitle" class="input" type="text" required />
+
+          <label for="solutionSummary">How would this solve the problem?</label>
+          <textarea id="solutionSummary" class="input input-area" rows="4" required></textarea>
+
+          <label for="neededRoles">Roles Needed (comma-separated)</label>
+          <input id="neededRoles" class="input" type="text" placeholder="Full-Stack Engineer, Sales Lead, Designer" required />
+
+          <button type="submit" class="primary-btn full-width">Publish Proposal</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <script src="reddit-problems.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+

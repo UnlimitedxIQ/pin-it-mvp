@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pin It | Teams</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="teams">
+  <header class="topbar">
+    <a class="brand-wrap brand-link" href="index.html" aria-label="Pin It Home">
+      <div class="brand-badge">P</div>
+      <div>
+        <p class="brand-name">Pin It</p>
+        <p class="brand-sub">Crowdsourced startup opportunities</p>
+      </div>
+    </a>
+
+    <nav class="top-nav" aria-label="Primary">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="discover.html" class="nav-link">Discover</a>
+      <a href="teams.html" class="nav-link active">Teams</a>
+    </nav>
+
+    <label class="search-wrap" for="searchInput">
+      <input id="searchInput" type="search" placeholder="Search teams, sectors, skills..." />
+    </label>
+
+    <a class="primary-btn" href="submit.html">Submit Problem</a>
+  </header>
+
+  <section class="page-hero">
+    <h1>Join Teams Building Real Solutions</h1>
+    <p id="teamsContext">Browse teams forming around validated problems and join where your skill set fits.</p>
+  </section>
+
+  <main class="simple-layout">
+    <section id="teamGrid" class="team-grid" aria-live="polite"></section>
+  </main>
+
+  <script src="reddit-problems.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+

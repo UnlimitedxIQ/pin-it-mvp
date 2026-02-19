@@ -1,0 +1,225 @@
+[
+  {
+    "id": "reddit-issue-90-days",
+    "title": "90 Days",
+    "sector": "FinTech",
+    "summary": "Recurring complaints mention payment, late, payments. Evidence: 7 comments across 2 subreddits.",
+    "interested": 139,
+    "teams": 0,
+    "demand": "low",
+    "fresh": true,
+    "investor": false,
+    "complaintCount": 7,
+    "sourcePlatform": "Reddit",
+    "sourceSubreddits": [
+      "freelance",
+      "personalfinance"
+    ],
+    "complaints": [
+      {
+        "text": "Not to rub salt in the wound but you didn't really miss \"one payment\" - you missed that payment at least 3 times in order to get the 90 day ding to your credit. A 30 or 60 day late payment is damaging but it's the 90 day one that really gets you, and you're correct it will take 7 years (same length as bankruptcy) to fully recover. Source: happened to me. Best you can do is never make a late payment again, put as much distance between this and the time you'll need to utilize your credit as you can, and then hope you can find an understanding lender when it comes time. Beyond that, how's your wife's credit? Fortunately my husband's credit is immaculate and we were still able to buy a house at the tail end of \"my\" 7 years with a competitive interest rate.",
+        "subreddit": "personalfinance",
+        "author": "vshzzd",
+        "score": 405,
+        "createdUtc": 1771444625.0,
+        "postTitle": "My credit score dropped 221 points from missing one student loan payment. 808 to 587.",
+        "sourceUrl": "https://www.reddit.com/r/personalfinance/comments/1r8cp5d/my_credit_score_dropped_221_points_from_missing/o643xsv/"
+      },
+      {
+        "text": "&gt; My bank closed down in October (like it went bankrupt and closed). There were only two bank failures in 2025 and both in the first half of the year. Moreover, when a bank fails, the FDIC typically makes great efforts to try to keep payments processing as usual. Furthermore, how could it be only one missed payment and 90 days late? If you have a payment due every month, and one payment is report 90d late, that means you have missed three to four payments. I am not surprised at all they would not do a goodwill reversal, and secondly, if they openly told you to send a letter, it sounds like they did not even refuse -- you just haven't bothered to send it. Anyway, the credit scoring people have basically decided that a 90d late is catastrophic -- in rough terms, there's basically a 50/50 as to whether it ever gets paid at that point. 30d lates and 60/90d lates are treated very differently. You will see the the list of score reason codes, \"serious delinquency\" used in the reason code. And FICO scoring is a lot more complex than the simple pie chart of score factors they show, but in any case, the impact will get better over time, potentially with a significant recalculation at 2 years out.",
+        "subreddit": "personalfinance",
+        "author": "bithakr",
+        "score": 110,
+        "createdUtc": 1771446863.0,
+        "postTitle": "My credit score dropped 221 points from missing one student loan payment. 808 to 587.",
+        "sourceUrl": "https://www.reddit.com/r/personalfinance/comments/1r8cp5d/my_credit_score_dropped_221_points_from_missing/o64btlh/"
+      },
+      {
+        "text": "You\u2019re 90 days late, dude. I know you\u2019re sleep deprived because of your newborn but that\u2019s 3 months of you not paying anything.",
+        "subreddit": "personalfinance",
+        "author": "alwayslookingout",
+        "score": 80,
+        "createdUtc": 1771445737.0,
+        "postTitle": "My credit score dropped 221 points from missing one student loan payment. 808 to 587.",
+        "sourceUrl": "https://www.reddit.com/r/personalfinance/comments/1r8cp5d/my_credit_score_dropped_221_points_from_missing/o647vwq/"
+      },
+      {
+        "text": "Higher up he apparently missed 13 different payments, all of which were 90 days late. So 40 missed payments? Yeah, that's gonna drop your score for sure.",
+        "subreddit": "personalfinance",
+        "author": "deathlokke",
+        "score": 76,
+        "createdUtc": 1771449902.0,
+        "postTitle": "My credit score dropped 221 points from missing one student loan payment. 808 to 587.",
+        "sourceUrl": "https://www.reddit.com/r/personalfinance/comments/1r8cp5d/my_credit_score_dropped_221_points_from_missing/o64ms69/"
+      },
+      {
+        "text": "\u201cThey say I have to send letters.\u201d Just spitballing here, but, have you tried sending letters? But seriously there\u2019s no easy fix for this. 90 days late is a huge ding to your credit, but also \u201clife happens and I forgot to pay my debts for 3 months\u201d isn\u2019t an excuse any should reasonably be expected to accept. Do anything they tell you you need to do. You don\u2019t have standing to make any demands. Best you\u2019re gonna get is to get your payments caught up, jump through any hoops they present to you, and do better with payments moving forward. Repairing credit is a long game. Destroying it is not. That sucks, but it\u2019s the system we\u2019ve got.",
+        "subreddit": "personalfinance",
+        "author": "Bloodmind",
+        "score": 18,
+        "createdUtc": 1771448350.0,
+        "postTitle": "My credit score dropped 221 points from missing one student loan payment. 808 to 587.",
+        "sourceUrl": "https://www.reddit.com/r/personalfinance/comments/1r8cp5d/my_credit_score_dropped_221_points_from_missing/o64h4ct/"
+      },
+      {
+        "text": "I had a late payment of 30 days in August 2022. It tanked my score. The further away u are from the late payment the better. After 2 years I saw consistent bumps up. Now 3.5 years almost fully recovered. I can't say how a 90 day payment will take. And yes after 7 years it will drop off credit report.",
+        "subreddit": "personalfinance",
+        "author": "Consistent_Ad_6400",
+        "score": 8,
+        "createdUtc": 1771444934.0,
+        "postTitle": "My credit score dropped 221 points from missing one student loan payment. 808 to 587.",
+        "sourceUrl": "https://www.reddit.com/r/personalfinance/comments/1r8cp5d/my_credit_score_dropped_221_points_from_missing/o6451s3/"
+      },
+      {
+        "text": "I think each features be decided in milestone with payment. And new features will go in new milestone with new payment. So client has clearance of what they are paying in return of getting what services",
+        "subreddit": "freelance",
+        "author": "fezzy11",
+        "score": 2,
+        "createdUtc": 1770814167.0,
+        "postTitle": "What the hell did he expect?",
+        "sourceUrl": "https://www.reddit.com/r/freelance/comments/1r14ytq/what_the_hell_did_he_expect/o4sh4dv/"
+      }
+    ],
+    "solutions": [],
+    "status": "published"
+  },
+  {
+    "id": "reddit-issue-supply-chain",
+    "title": "Supply Chain",
+    "sector": "Mobility",
+    "summary": "Recurring complaints mention math, chain, supply. Evidence: 6 comments across 1 subreddits.",
+    "interested": 61,
+    "teams": 0,
+    "demand": "low",
+    "fresh": true,
+    "investor": false,
+    "complaintCount": 6,
+    "sourcePlatform": "Reddit",
+    "sourceSubreddits": [
+      "supplychain"
+    ],
+    "complaints": [
+      {
+        "text": "The general public doesn't have anywhere near a remote idea of what supply chain is. They all think they order it and Amazon puts it on a van and drives it to them.",
+        "subreddit": "supplychain",
+        "author": "BigBoom217",
+        "score": 88,
+        "createdUtc": 1770945746.0,
+        "postTitle": "People thinking supply chain is math-free, or as easy as marketing",
+        "sourceUrl": "https://www.reddit.com/r/supplychain/comments/1r3bl8n/people_thinking_supply_chain_is_mathfree_or_as/o535390/"
+      },
+      {
+        "text": "There is always some type of math involved in SC. I\u2019m a purchasing manager and I find myself with 10 tabs of the calculator app open and hella spreadsheets working for me. Plus counting inventory as well but that\u2019s just basic arithmetic. If I tell people I\u2019m in supply chain, they just assume logistics when it\u2019s so much more to it.",
+        "subreddit": "supplychain",
+        "author": "StockExplanation",
+        "score": 11,
+        "createdUtc": 1770951857.0,
+        "postTitle": "People thinking supply chain is math-free, or as easy as marketing",
+        "sourceUrl": "https://www.reddit.com/r/supplychain/comments/1r3bl8n/people_thinking_supply_chain_is_mathfree_or_as/o53ln2p/"
+      },
+      {
+        "text": "It really depends on what part of the supply chain you're in. It's not the same someone working as a logistics officer, where you just need basic arithmetic ability, versus someone working as a senior demand/inventory planner, where you might need clustering (ABC-XYZ, k-means...etc) for classifying SKUs based on their sales shape to define stock/replenishment policies, multi-echleon inventory optimization, ETS-Holt Winters, or even things like Kalman Filter or ML for forecasting if you want to get fancy. Two completely different worlds.",
+        "subreddit": "supplychain",
+        "author": "Shun_Leon",
+        "score": 3,
+        "createdUtc": 1770999817.0,
+        "postTitle": "People thinking supply chain is math-free, or as easy as marketing",
+        "sourceUrl": "https://www.reddit.com/r/supplychain/comments/1r3bl8n/people_thinking_supply_chain_is_mathfree_or_as/o56r0pw/"
+      },
+      {
+        "text": "&gt;&gt;&gt;\u201dWhat do people even assume SC means??\u201d Putting boxes in a truck. Spend one day on this sub and it\u2019s mostly questions about how to break into this elusive mystery world. *\u201dI\u2019ve spent two decades as a planner. How can I break into \u201csupply chain\u201d ?! \u201c* *\u201dI have three masters degrees and a PhD, will CPIM give me the edge I need???!\u201d* *\u201dI\u2019ve been in sales for years, but have always loved supply chain\u2026.\u201d* Great - cause that\u2019s a part of the supply chain.",
+        "subreddit": "supplychain",
+        "author": "Any-Walk1691",
+        "score": 3,
+        "createdUtc": 1770980745.0,
+        "postTitle": "People thinking supply chain is math-free, or as easy as marketing",
+        "sourceUrl": "https://www.reddit.com/r/supplychain/comments/1r3bl8n/people_thinking_supply_chain_is_mathfree_or_as/o55824n/"
+      },
+      {
+        "text": "Marketing math is about the same as supply chain math.",
+        "subreddit": "supplychain",
+        "author": "capnheim",
+        "score": 2,
+        "createdUtc": 1770999475.0,
+        "postTitle": "People thinking supply chain is math-free, or as easy as marketing",
+        "sourceUrl": "https://www.reddit.com/r/supplychain/comments/1r3bl8n/people_thinking_supply_chain_is_mathfree_or_as/o56pt1c/"
+      },
+      {
+        "text": "I have to do 6 different conversions depending on who I am trying to talk to in my various departments, my customer, and our 3rd party warehouse. God forbid the carrier gets involved and now I have to talk cubing, heights, freight class, lions, tigers, bears oh my! Also exports \ud83d\udeac. But oh no the engineers in R&amp;E need another raise and sales needs a trip to Cancun. Meanwhile supply chain is 24/7 bay B\u2026 TLDR: Math is the language our world runs on, just different versions.",
+        "subreddit": "supplychain",
+        "author": "Aschrod1",
+        "score": 2,
+        "createdUtc": 1770994420.0,
+        "postTitle": "People thinking supply chain is math-free, or as easy as marketing",
+        "sourceUrl": "https://www.reddit.com/r/supplychain/comments/1r3bl8n/people_thinking_supply_chain_is_mathfree_or_as/o568cg1/"
+      }
+    ],
+    "solutions": [],
+    "status": "published"
+  },
+  {
+    "id": "reddit-issue-potential-customers",
+    "title": "Potential Customers",
+    "sector": "SaaS",
+    "summary": "Recurring complaints mention b2b, b2c, just. Evidence: 5 comments across 1 subreddits.",
+    "interested": 59,
+    "teams": 0,
+    "demand": "low",
+    "fresh": true,
+    "investor": false,
+    "complaintCount": 5,
+    "sourcePlatform": "Reddit",
+    "sourceSubreddits": [
+      "SaaS"
+    ],
+    "complaints": [
+      {
+        "text": "this is mostly true but \"just email 50 plumbing companies\" is oversimplified b2b is definitely easier to monetize but sales is still hard. cold email gets like 2% response if youre lucky. calling works but most devs hate it i built a b2b tool that hit 3k mrr and yeah businesses paid way easier than consumers. but finding those first 30 customers still took months of grinding outreach the core point is right though. boring problems with clear roi beat viral app dreams my first startup was b2c, failed hard. second was b2b for dev teams, sold for 180k. difference was businesses could expense it without approval just dont think b2b means easy marketing, its just less impossible than b2c",
+        "subreddit": "SaaS",
+        "author": "coffeeneedle",
+        "score": 103,
+        "createdUtc": 1769981745.0,
+        "postTitle": "90% of you are failing because you build B2C apps instead of boring B2B tools",
+        "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1qtb44u/90_of_you_are_failing_because_you_build_b2c_apps/o31ln42/"
+      },
+      {
+        "text": "b2c is about people, not products. if you don\u2019t deeply understand human behavior, storytelling, and group dynamics, you will struggle b2c is about understanding human psychology. it rewards those who understand psychology, not just features most tips, advice, and VC mentoring push you toward b2b because it feels safer for them. they want to secure their investment, not because b2c is easier or less valuable..",
+        "subreddit": "SaaS",
+        "author": "boulhouech",
+        "score": 41,
+        "createdUtc": 1769981848.0,
+        "postTitle": "90% of you are failing because you build B2C apps instead of boring B2B tools",
+        "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1qtb44u/90_of_you_are_failing_because_you_build_b2c_apps/o31lzyc/"
+      },
+      {
+        "text": "I did upvote from reading title. Not even reading body. Reason \u2013 true reality. B2B &gt; B2C (at least for solo). Easier? \u2013 nah. Higher chance to prosper? \u2013 most certainly. Like 5% vs 10% of probability to be successful :D Another brutal truth \u2013 b2b is extremely heavy to... sell. And your potential customers can be... serious gatekeepers for you. Like example with dentist: there is no way you can make such established business to move from their proven software which they are using for years to your \"boring\" saas. Well.. unless there is new your friend willing to take a risk starting dentist practice. Or your roof guy - he will make everything to not to pay for your software as well, unless it's sort of lead-type of actions and so on.",
+        "subreddit": "SaaS",
+        "author": "Typical-Yam9482",
+        "score": 9,
+        "createdUtc": 1769998912.0,
+        "postTitle": "90% of you are failing because you build B2C apps instead of boring B2B tools",
+        "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1qtb44u/90_of_you_are_failing_because_you_build_b2c_apps/o332j8h/"
+      },
+      {
+        "text": "there is a lot of truth here but i think the real spliit is not b2b versus b2c it is value clariity versus hope marketiing. boring b2b works because the buyer can clearly see money or time saved. most b2c fails because the value is emotional and crowded not because it is consumer. i have seen b2b tools die too when they were built wiithout a painful specific problem behind them. boriing just forces you to be honest about ROI which is a good discipline for any product.",
+        "subreddit": "SaaS",
+        "author": "Electronic-Cat185",
+        "score": 7,
+        "createdUtc": 1770002352.0,
+        "postTitle": "90% of you are failing because you build B2C apps instead of boring B2B tools",
+        "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1qtb44u/90_of_you_are_failing_because_you_build_b2c_apps/o33cig1/"
+      },
+      {
+        "text": "Agree and disagree. B2B is not the cakewalk this post makes it sound like. It depends with which type of B2B you're targetting. You're dealing with SOC 2 compliance, procurement committees, legal reviews, longer sales cycles, and enterprise customers who expect SLAs and support you can't fake as a solo founder. B2C absolutely has its own problems: attention is expensive, churn is brutal, and yes, competing with free apps backed by billions in VC money is a nightmare. But it also has lower barriers to entry and can scale in ways B2B often can't without a sales team. The real lesson isn't \"B2B good, B2C bad.\" It's do your market research before you build anything. Talk to potential customers. Test demand. Look at whether people are already paying for solutions in that space. If you've been building for a year and nobody's biting, that's not a B2C problem; That's a market fit problem. Some of the biggest successes I've seen started B2B and pivoted to B2C, or the other way around. The model isn't the point. Understanding who will pay you and why is the point.",
+        "subreddit": "SaaS",
+        "author": "RevolutionaryGate742",
+        "score": 3,
+        "createdUtc": 1770368975.0,
+        "postTitle": "90% of you are failing because you build B2C apps instead of boring B2B tools",
+        "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1qtb44u/90_of_you_are_failing_because_you_build_b2c_apps/o3vfdbh/"
+      }
+    ],
+    "solutions": [],
+    "status": "published"
+  }
+]
